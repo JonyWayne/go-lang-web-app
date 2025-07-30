@@ -1,0 +1,71 @@
+{{ define "index" }}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .container {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ .Header }}</h1>
+    </header>
+    
+    <div class="container">
+        <h2>{{ .Subheader }}</h2>
+        <p>{{ .Content }}</p>
+        
+        <button onclick="showMessage()">Нажми меня</button>
+        <p id="message"></p>
+        <p>Ваш IP: {{.IP}}</p>
+        <p>User Agent: {{.UserAgent}}</p>
+    </div>
+    
+    <script>
+        function showMessage() {
+            document.getElementById('message').textContent = 
+                'Привет! Это работает с JavaScript! Текущее время: ' + new Date().toLocaleTimeString();
+        }
+    </script>
+</body>
+</html>
+{{ end }}

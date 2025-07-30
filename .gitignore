@@ -1,0 +1,25 @@
+# Binaries и исполняемые файлы
+/bin/
+/main
+
+# Файлы IDE и редакторов
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Локальные конфиги и env-файлы
+.env
+config.yml
+config.json
+
+# Тестовые и временные файлы
+*.test
+*.out
+/tmp/
+
+# Автогенерируемые файлы
+*.exe
+*.dll
+*.so
+*.a
